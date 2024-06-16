@@ -1,32 +1,28 @@
 from LinkedList import LinkedList
 
-class Stack:
+class Queue:
     def __init__(self):
         self.linkedlist = LinkedList()
 
-    def push(self, data):
-        self.linkedlist.prepend(data)
+    def enqueue(self, data):
+        self.linkedlist.append(data)
 
     def __str__(self):
         return self.linkedlist.__str__()
 
-    def pop(self):
+    def dequeue(self):
         if self.linkedlist.head is None:
-            raise IndexError("Pop from empty stack")
+            raise IndexError("Dequeue from empty queue")
         value = self.linkedlist.head.data
         self.linkedlist.head = self.linkedlist.head.next
         return value
 
-
 if __name__ == "__main__":
-    s = Stack()
-    s.push(34)
-    s.push(56)
-    s.push(67)
-    print(s.pop())
-    print(s.pop())
-    print(s.pop())
-    print(s.pop())
-    print(s)
-
+    q = Queue()
+    q.enqueue(10)
+    try:
+        print(q.dequeue())
+        print(q.dequeue())
+    except IndexError as e:
+        print('Error is ', e)
 
