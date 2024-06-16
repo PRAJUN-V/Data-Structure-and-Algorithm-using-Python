@@ -1,6 +1,8 @@
 import LinkedList
 import Stack
 import Queue
+import CustomHashFunction
 
-ll = LinkedList.LinkedList()
-print(ll)
+print(CustomHashFunction.my_own_hash_function('hello world'))
+
+
