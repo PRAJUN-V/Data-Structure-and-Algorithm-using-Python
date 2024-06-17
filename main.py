@@ -3,6 +3,5 @@ import Stack
 import Queue
 import CustomHashFunction
 
-print(CustomHashFunction.my_own_hash_function('hello world'))
-
-
+a = [1, 3, 4, 5]
+print(a.pop(5))

@@ -61,9 +61,33 @@ class LinkedList:
             currentNode = currentNode.next
         currentNode.data = data
 
+    def pop(self, index=0):
+        if index >= self.length:
+            raise IndexError('pop index out of range')
+
+        elif index == 0:
+            temp = self.head
+            self.head = self.head.next
+            self.length -= 1
+            return temp.data
+
+        else:
+            currentNode = self.head
+            for _ in range(index - 1):
+                currentNode = currentNode.next
+            temp = currentNode.next.data
+            currentNode.next = currentNode.next.next
+            self.length -= 1
+            return temp
+
+    def __delitem__(self, index):
+        self.pop(index)
+
+
 if __name__ == "__main__":
     ll = LinkedList()
     for i in range(10):
         ll.append(i)
-    ll[9] = 100
     print(ll)
+    print(ll)
+
