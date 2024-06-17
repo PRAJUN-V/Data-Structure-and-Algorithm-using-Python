@@ -10,3 +10,5 @@ I have created a custom hash function.
 I have creates a hash table
     - Collision is handled using chaining in it.
 
+Just created a doubly linked list. Need to add method in it to improve its functionality.
+

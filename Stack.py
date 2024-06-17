@@ -17,7 +17,6 @@ class Stack:
         self.linkedlist.head = self.linkedlist.head.next
         return value
 
-
 if __name__ == "__main__":
     s = Stack()
     s.push(34)
@@ -28,5 +27,3 @@ if __name__ == "__main__":
     print(s.pop())
     print(s.pop())
     print(s)
-
-
