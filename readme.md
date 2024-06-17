@@ -12,3 +12,4 @@ I have creates a hash table
 
 Just created a doubly linked list. Need to add method in it to improve its functionality.
 
+I have created functions for binary search and linear search.
