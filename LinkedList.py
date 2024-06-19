@@ -83,11 +83,35 @@ class LinkedList:
     def __delitem__(self, index):
         self.pop(index)
 
+    def insert(self, index, data):
+        if index == 0:
+            self.prepend(data)
+
+        elif index == self.length :
+            self.append(data)
+
+        elif index > self.length - 1 or index < 0:
+            raise IndexError('Invalid index')
+
+        else:
+            new_node = Node(data)
+            currentNode = self.head
+            for _ in range(index - 1):
+                currentNode = currentNode.next
+            new_node.next = currentNode.next
+            currentNode.next = new_node
+            self.length += 1
+
+
 
 if __name__ == "__main__":
     ll = LinkedList()
     for i in range(10):
         ll.append(i)
+
     print(ll)
+    ll.insert(7, 1983)
+    ll.insert(0, 235)
+    ll.insert(12, 897897)
     print(ll)
 
