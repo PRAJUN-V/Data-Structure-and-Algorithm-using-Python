@@ -15,3 +15,5 @@ Just created a doubly linked list. Need to add method in it to improve its funct
 I have created functions for binary search and linear search.
 
 I have used inbuilt dequeue data structure in collection module.
+
+I am going to learn about graph.
