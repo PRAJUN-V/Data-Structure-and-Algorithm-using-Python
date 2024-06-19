@@ -1,3 +1,5 @@
+import heapq
+
 class GraphNode:
     def __init__(self, data):
         self.data = data
@@ -20,16 +22,44 @@ class Graph:
         else:
             print(f"One or both nodes {from_node}, {to_node} not found.")
 
-    def get_edge_weight(self, from_node, to_node):
-        if from_node in self.nodes and to_node in self.nodes:
-            from_node_obj = self.nodes[from_node]
-            to_node_obj = self.nodes[to_node]
-            if to_node_obj in from_node_obj.adjacent:
-                return from_node_obj.adjacent[to_node_obj]
-            else:
-                return f"No edge exists between {from_node} and {to_node}"
-        else:
-            return f"One or both nodes {from_node}, {to_node} not found."
+    # Dijkstra's algorithm is used here.
+    def get_shortest_distance_and_path(self, start_node_data, end_node_data):
+        if start_node_data not in self.nodes or end_node_data not in self.nodes:
+            return "One or both nodes not found."
+
+        start_node = self.nodes[start_node_data]
+        end_node = self.nodes[end_node_data]
+
+        distances = {node: float('inf') for node in self.nodes.values()}
+        distances[start_node] = 0
+        previous_nodes = {node: None for node in self.nodes.values()}
+
+        priority_queue = [(0, start_node)]
+
+        while priority_queue:
+            current_distance, current_node = heapq.heappop(priority_queue)
+
+            if current_distance > distances[current_node]:
+                continue
+
+            for neighbor, weight in current_node.adjacent.items():
+                distance = current_distance + weight
+                if distance < distances[neighbor]:
+                    distances[neighbor] = distance
+                    previous_nodes[neighbor] = current_node
+                    heapq.heappush(priority_queue, (distance, neighbor))
+
+        if distances[end_node] == float('inf'):
+            return "No path found."
+
+        # Construct the path
+        path = []
+        current = end_node
+        while current:
+            path.insert(0, current)
+            current = previous_nodes[current]
+
+        return distances[end_node], path
 
 # Example usage
 if __name__ == "__main__":
@@ -44,10 +74,6 @@ if __name__ == "__main__":
     graph.add_edge('Kannur', 'Calicut', 15)
     graph.add_edge("Thalassery", "Mumbai", 89)
 
-    print(graph.get_edge_weight('Thalassery', 'Kannur'))  # Output: 10
-    print(graph.get_edge_weight('Kannur', 'Thalassery'))  # Output: 10
-    print(graph.get_edge_weight('Thalassery', 'Calicut')) # Output: 20
-    print(graph.get_edge_weight('Calicut', 'Kannur'))     # Output: 15
-    print(graph.get_edge_weight('Thalassery', 'Mumbai'))  # Output: One or both nodes Thalassery, Mumbai not found
-    print(graph.get_edge_weight('Mumbai', 'Thalassery'))      # Output: One or both nodes Mumbai, Kannur not found
-    print(graph.get_edge_weight('Kannur', 'Kannur'))      # Output: No edge exists between Kannur and Kannur
+    distance, path = graph.get_shortest_distance_and_path('Thalassery', 'Calicut')
+    print("Shortest distance:", distance)
+    print("Shortest path:", [node.data for node in path])
