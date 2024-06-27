@@ -17,3 +17,7 @@ I have created functions for binary search and linear search.
 I have used inbuilt dequeue data structure in collection module.
 
 I am going to learn about graph.
+
+I have implemented 4 pillars of OOPs using python
+
+I have implemented priority queue using linked list
