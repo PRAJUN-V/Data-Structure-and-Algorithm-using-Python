@@ -102,6 +102,12 @@ class LinkedList:
             currentNode.next = new_node
             self.length += 1
 
+    def __iter__(self):
+        currentNode = self.head
+        while currentNode is not None:
+            yield currentNode.data
+            currentNode = currentNode.next
+
 
 
 if __name__ == "__main__":
@@ -114,4 +120,5 @@ if __name__ == "__main__":
     ll.insert(0, 235)
     ll.insert(12, 897897)
     print(ll)
+    print(list(ll))
 
