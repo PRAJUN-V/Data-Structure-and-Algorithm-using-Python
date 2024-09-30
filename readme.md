@@ -33,3 +33,5 @@ I have implemented Heap(creation, insertion(heapify up))
 I have implemented Trie(creation, add_word, search)
 
 I have implemented Graph using Adjacency list
+
+I have implemented Graph using Adjacency Matrix
