@@ -18,6 +18,10 @@ I have used inbuilt dequeue data structure in collection module.
 
 I am going to learn about graph.
 
-I have implemented 4 pillars of OOPs using python
+I have implemented 4 pillars of OOPs using python.
 
-I have implemented priority queue using linked list
+I have implemented priority queue using linked list.
+
+I have implemented trie for word recommendation.
+
+I have implemented Nary Tree 
