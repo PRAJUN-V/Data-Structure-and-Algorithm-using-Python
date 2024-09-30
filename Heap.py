@@ -32,10 +32,7 @@ h1 = MinHeap()
 # print(h1.parent(6))
 # print(h1.left_child(1))
 # print(h1.right_child(1))
-h1.insert(8)
-h1.insert(1)
-h1.insert(9)
-h1.insert(0)
-h1.insert(2)
-h1.insert(3)
+l = [11, 6, 8, 19, 4, 10, 5, 17, 43, 49, 31]
+for i in l:
+    h1.insert(i)
 h1.print_heap()

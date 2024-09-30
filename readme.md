@@ -22,10 +22,12 @@ I have implemented 4 pillars of OOPs using python.
 
 I have implemented priority queue using linked list.
 
-I have implemented trie for word recommendation.
+I have implemented advanced trie for word recommendation.
 
 I have implemented Nary Tree 
 
 I have implemented a simple Binary Tree
 
 I have implemented Heap(creation, insertion(heapify up))
+
+I have implemented Trie(creation, add_word, search)
