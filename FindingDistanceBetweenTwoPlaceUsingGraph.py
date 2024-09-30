@@ -1,4 +1,4 @@
-from Graph import Graph
+from GraphAdvanced import Graph
 
 map_graph = Graph()
 map_graph.add_node("Thalassery")
