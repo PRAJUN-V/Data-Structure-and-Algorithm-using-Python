@@ -25,3 +25,5 @@ I have implemented priority queue using linked list.
 I have implemented trie for word recommendation.
 
 I have implemented Nary Tree 
+
+I have implemented a simple Binary Tree
