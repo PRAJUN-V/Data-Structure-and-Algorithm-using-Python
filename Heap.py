@@ -70,3 +70,23 @@ h1.print_heap()  # Should print the heap structure
 
 print("Deleted root:", h1.delete())  # Deletes the minimum element (root)
 h1.print_heap()  # Should print the heap after deletion
+
+print("Deleted root:", h1.delete())  # Deletes the minimum element (root)
+h1.print_heap()  # Should print the heap after deletion
+
+print("Deleted root:", h1.delete())  # Deletes the minimum element (root)
+h1.print_heap()  # Should print the heap after deletion
+
+print("Deleted root:", h1.delete())  # Deletes the minimum element (root)
+h1.print_heap()  # Should print the heap after deletion
+
+print("Deleted root:", h1.delete())  # Deletes the minimum element (root)
+h1.print_heap()  # Should print the heap after deletion
+
+
+print("Deleted root:", h1.delete())  # Deletes the minimum element (root)
+h1.print_heap()  # Should print the heap after deletion
+
+print("Deleted root:", h1.delete())  # Deletes the minimum element (root)
+h1.print_heap()  # Should print the heap after deletion
+
