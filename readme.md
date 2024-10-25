@@ -35,3 +35,5 @@ I have implemented Trie(creation, add_word, search)
 I have implemented Graph using Adjacency list
 
 I have implemented Graph using Adjacency Matrix
+
+I have implemented different types of sorting in python.
